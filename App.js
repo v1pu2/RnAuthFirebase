@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StatusBar} from 'react-native';
 import Landing from './src/component/auth/Landing';
 import Register from './src/component/auth/Register';
+import Login from './src/component/auth/Login';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import * as firebase from 'firebase';
@@ -56,12 +57,13 @@ class App extends Component {
               options={{headerShown: false}}
             />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="Login" component={Login} />
           </Stack.Navigator>
         </NavigationContainer>
       );
     }
     return (
-      <View style={{justifyContent: 'center', flex: 1}}>
+      <View style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
         <Text>User already loggedIn</Text>
       </View>
     );
