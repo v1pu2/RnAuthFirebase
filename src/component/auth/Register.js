@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
-import firebase from 'firebase';
+import auth from '@react-native-firebase/auth';
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -11,18 +11,23 @@ class Register extends Component {
     };
     this.onRegister = this.onRegister.bind(this);
   }
-  onRegister() {
-    const {email, password, name} = this.state;
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        console.log('result', result);
-      })
-      .catch((error) => {
-        console.log('error', error);
-      });
+
+  async onRegister() {
+    const {email, password} = this.state;
+
+    try {
+      let response = await auth().createUserWithEmailAndPassword(
+        email,
+        password,
+      );
+      if (response) {
+        console.log('?????', response);
+      }
+    } catch (e) {
+      console.error(e.message);
+    }
   }
+
   render() {
     return (
       <View>

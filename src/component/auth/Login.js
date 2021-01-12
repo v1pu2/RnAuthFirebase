@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput, Button} from 'react-native';
-import firebase from 'firebase';
+import {View, Text, TextInput, Button, Alert} from 'react-native';
+import auth from '@react-native-firebase/auth';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -10,18 +10,19 @@ class Login extends Component {
     };
     this.onLogin = this.onLogin.bind(this);
   }
-  onLogin() {
+  async onLogin() {
     const {email, password} = this.state;
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        console.log('result in login', result);
-      })
-      .catch((error) => {
-        console.log('error in login', error);
-      });
+    try {
+      let response = await auth().signInWithEmailAndPassword(email, password);
+      console.log('response in signin ', response);
+      if (response && response.user) {
+        Alert.alert('Success ✅', 'Authenticated successfully');
+      }
+    } catch (e) {
+      console.error(e.message);
+    }
   }
+
   render() {
     return (
       <View>

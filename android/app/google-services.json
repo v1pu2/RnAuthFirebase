@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "132986380639",
+    "firebase_url": "https://rnauth-demo-default-rtdb.firebaseio.com",
+    "project_id": "rnauth-demo",
+    "storage_bucket": "rnauth-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132986380639:android:e610bf130af8c97868d6ea",
+        "android_client_info": {
+          "package_name": "com.rnauthfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132986380639-n8ouretu4mpner4s1nqci47prm581cbf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUG9_2PyWPRDkyFzldTA3z1MWwAis1Uw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132986380639-n8ouretu4mpner4s1nqci47prm581cbf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
